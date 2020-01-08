@@ -1,0 +1,6 @@
+*Instalación de dependencias:
+npm install
+*Ejecución del API
+npm start
+*Ejecución de test 
+npm test
