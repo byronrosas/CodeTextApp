@@ -4,3 +4,6 @@ npm install
 npm start
 *Ejecución de test 
 npm test
+
+*Repositorio
+https://github.com/byronrosas/CodeTextApp.git

@@ -1,15 +1,16 @@
-FROM node:8.17.0
+FROM node:8
 
-RUN mkdir -p /app/usr/src/app
+RUN mkdir -p /usr/src/app
 
-WORKDIR /
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install
+# If you are building your code for production
+# RUN npm ci --only=production
 
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
+# Bundle app source
+COPY . .
 
-# install and cache app dependencies
-COPY package.json /app/package.json
-RUN npm install --silent
-RUN npm install react-scripts -g --silent
+EXPOSE 3000
 
 CMD [ "npm", "start" ]
